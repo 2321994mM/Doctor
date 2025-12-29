@@ -1004,7 +1004,7 @@ progress {
   --bs-gutter-y: 15rem;
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .col-sm {
     -webkit-box-flex: 1;
     -ms-flex: 1 0 0%;
@@ -18850,154 +18850,6 @@ ul {
 	}
 }
 
-
-.section2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
- }
-
-.slider {
-  --slider-width: 500px;
-  --slider-height: 700px;
-  --slider-bullets-spacing-y: 16px;
-  --slider-bullets-height: 12px;
-  --slider-shadow: 0px 10px 26px 3px rgb(0 0 0 / 10%);
-  --slider-border-width: 8px;
-
-  position: relative;
-  display: flex;
-  gap: 8px;
-  align-items: flex-end;
-  justify-content: center;
-  width: var(--slider-width);
-  height: calc(
-    var(--slider-bullets-spacing-y) + var(--slider-bullets-height) +
-      var(--slider-height) + (var(--slider-border-width) * 2)
-  );
-}
-
-.slider__content {
-  position: absolute;
-  bottom: calc(var(--slider-bullets-spacing-y) + var(--slider-bullets-height));
-  left: 50%;
-  z-index: 5;
-  width: var(--slider-width);
-  height: var(--slider-height);
-  overflow: hidden;
-  border: var(--slider-border-width) solid #b2dded;
-  border-radius: 16px;
-  translate: -50% 0;
-
-  > img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    transition: translate 0.5s ease-in-out;
-    object-fit: cover;
-  }
-}
-
-.slider__control {
-  &::after {
-    position: absolute;
-    bottom: calc(
-      50% + (var(--slider-bullets-spacing-y) + var(--slider-bullets-height)) / 2
-    );
-    z-index: 10;
-    width: 32px;
-    height: 64px;
-    cursor: pointer;
-    content: "";
-    background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"%2F%3E%3C%2Fsvg%3E')
-      white;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 24px 24px;
-    transition: width 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
-    translate: 0 50%;
-  }
-
-  &:hover::after {
-    width: 48px;
-  }
-
-  > input {
-    display: none;
-    height: var(--slider-bullets-height);
-    aspect-ratio: 1/1;
-    margin: 0;
-    appearance: none;
-    cursor: pointer;
-    background-color: #fff;
-    border-radius: 9999px;
-    box-shadow: var(--slider-shadow);
-    opacity: 0.5;
-    transition: all 0.2s cubic-bezier(0.11, 1.03, 0.82, 1.33);
-    scale: 0.75;
-
-    &:hover {
-      scale: 1;
-    }
-
-    &:checked {
-      opacity: 1;
-      scale: 1;
-    }
-  }
-}
-
-.slider__item {
-  /* All slides except current */
-  &:not(:has(input:checked)) {
-    .slider__content > img {
-      translate: -100% 0;
-    }
-
-    .slider__control::after {
-      right: 100%;
-      border-top-left-radius: 9999px;
-      border-bottom-left-radius: 9999px;
-    }
-  }
-
-  /* Current slide */
-  &:has(input:checked) {
-    z-index: 1;
-
-    .slider__content > img {
-      translate: 0 0;
-    }
-
-    .slider__control::after {
-      display: none;
-    }
-  }
-
-  /* Slides after current slide */
-  &:has(input:checked) ~ & {
-    z-index: 5;
-
-    .slider__content > img {
-      translate: 100% 0;
-    }
-
-    & .slider__control::after {
-      right: auto;
-      left: 100%;
-      rotate: 180deg;
-    }
-  }
-
-  /* Direct next slide */
-  &:has(input:checked) + & {
-    z-index: 7;
-    display: block;
-  }
-}
 .footer-social-links li {
     display: inline-block;
     float: left;
@@ -19145,12 +18997,6 @@ button {
 }
 
 
-
-
-
-
-
-
 :root {
             --primary: #1b71a1;
             --primary-dark: #283779;   
@@ -19160,8 +19006,6 @@ button {
             --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
             --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
-
- 
 
         .footer-grid {
             display: flex;
@@ -19571,7 +19415,7 @@ section#home {
     background: #b2dded;
 }
 }
-/* من 576px وطالع (يعني sm وما فوق) */
+
 @media (max-width: 576px) {
    .footer-column.col-sm-12.col-md-4
  {
@@ -19583,3 +19427,236 @@ section#home {
 }
 
 }
+
+
+/*///////اعلاميه/////*/
+.LookForThisCoolWebsite {
+    font-size: 2em;
+    text-align: center;
+    background-color: #000;
+}
+
+    .LookForThisCoolWebsite a {
+        color: #FF0000;
+    }
+
+
+
+/* <!-- first slider start-->  */
+
+.slider { /* блок */
+    background: rgba(240,240,240,.5);
+    text-align: center;
+}
+
+    .slider div {
+        position: relative;
+        padding-top: 56.25%;
+    }
+
+    .slider iframe {
+        position: absolute;
+        top: .5%;
+        left: .5%;
+        width: 99%;
+        height: 99%;
+    }
+
+    .slider a { 
+        display: inline-block;
+        padding: 0 .5em;
+        text-decoration: none;
+        color: blue;
+    }
+
+        .slider a:visited {
+            color: rgb(204,204,203);
+        }
+
+        .slider a:hover {
+            transform: scale(1.5);
+        }
+
+        .slider a:not(:active):focus { 
+            pointer-events: none;
+        }
+
+        .slider a::before { 
+            content: "\25cf";
+            position: absolute;
+            color: rgba(0,0,1,.1);
+            transition: color 0s 9999999s; 
+        }
+
+        .slider a:nth-of-type(1)::before { 
+            color: rgb(0,129,0);
+        }
+
+    .slider span:active a::before { 
+        color: rgba(0,0,0,0);
+        transition: color 0s;
+    }
+
+    .slider span:active a:nth-of-type(1)::before { 
+        color: #ccc;
+        transition: color 0s;
+    }
+
+    .slider span:active a:active::before { 
+        color: green;
+        transition: color 0s;
+    }
+
+
+
+
+/* <!-- second slider -->  */
+.carousel {
+    padding: .3em .3em 0;
+    background: rgb(240,240,240);
+    text-align: center;
+}
+
+    .carousel div {
+        position: relative;
+        margin-bottom: .3em;
+        padding-top: 56.25%;
+    }
+
+    .carousel iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel span {
+        display: inline-block;
+        word-spacing: 1em;
+     
+        overflow: auto;
+        white-space: nowrap;
+        word-wrap: normal;
+    }
+
+    .carousel a {
+        position: relative;
+        display: inline-block;
+        max-width: 120px; 
+        width: 25%; 
+        border: 1px solid blue; 
+        opacity: .7;
+        text-decoration: none;
+    }
+
+        .carousel a:visited,
+        .carousel a:nth-of-type(1) {
+            border-color: #555; 
+        }
+
+        .carousel a:hover {
+            opacity: 1;
+        }
+
+        .carousel a:not(:active):focus {
+            pointer-events: none;
+        }
+
+        .carousel a::before {
+            content: "";
+            position: absolute;
+            top: 0em;
+            right: 0em;
+            bottom: 0em;
+            left: 0em;
+            background: rgba(0,0,1,.1);
+            transition: background 0s 9999999s;
+        }
+
+        .carousel a:nth-of-type(1)::before {
+            background: rgba(255,255,254,.7);
+        }
+
+    .carousel span:active a::before {
+        background: rgba(0,0,0,0);
+        transition: background 0s;
+    }
+
+    .carousel span:active a:active::before {
+        background: rgba(255,255,255,.7);
+        transition: background 0s;
+    }
+
+    .carousel img {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+
+/* <!-- third slider -->   */
+
+.gallery {
+    display: flex;
+    flex-flow: wrap;
+}
+
+    .gallery div {
+        flex: 150px;
+        position: relative;
+        text-align: center;
+    }
+
+        .gallery div:nth-of-type(1) {
+            flex: 10000 1 300px; 
+        }
+
+        .gallery div::before {
+            content: "";
+            display: block;
+            padding-top: 56.25%;
+        }
+
+        .gallery div:nth-of-type(1)::before {
+            padding-top: 56.25%;
+        }
+
+    .gallery iframe,
+    .gallery span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+
+    .gallery a {
+        display: inline-block;
+        margin: 5px 3px;
+        display: inline-block;
+        margin: 5px;
+        border: 1px solid #ccc;
+        transition: transform 0.3s ease;
+    }
+
+        .gallery a:last-child {
+            margin-bottom: 5px;
+        }
+
+    .gallery iframe,
+    .gallery img {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+    .gallery iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+ 
+
+        .gallery a:hover {
+            transform: scale(1.1);
+        }
+        /*العملاء*/
