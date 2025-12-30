@@ -5094,17 +5094,6 @@ fieldset:disabled .btn {
         justify-content: space-between;
     }
 
-.navbar-brand {
-    margin-right: 1rem;
-    font-size: calc(1.2978rem + 0.5736vw);
-    white-space: nowrap;
-}
-
-@media (min-width: 1200px) {
-    .navbar-brand {
-        font-size: 1.728rem;
-    }
-}
 
 .navbar-brand:hover, .navbar-brand:focus {
     text-decoration: none;
@@ -22022,13 +22011,12 @@ svg:not(:root).svg-inline--fa {
 
 @media (max-width: 576px) {
     .footer-column.col-sm-12.col-md-4 {
-        text-align: center !important;
         margin-top: 25px;
     }
-
-    .social-links, .contact-item {
-        justify-content: center !important;
+    a.navbar-brand img{
+        width:130px
     }
+ 
 }
 
 
@@ -22344,6 +22332,9 @@ svg:not(:root).svg-inline--fa {
 @media (max-width: 600px) {
     .ImageSlider {
         aspect-ratio: 4 / 3; /* نسبة أحسن للموبايل */
+    }
+    .navbar {
+        padding-top: 3rem !important;
     }
 }
 .navigation {
