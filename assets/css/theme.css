@@ -21466,8 +21466,8 @@ button {
 
 
 .trigger-button {
-    --color: #1b71a1;
-    --background: white;
+    --color: #fff;
+    --background: #1b71a1;
     outline: none;
     transition: transform 0.2s cubic-bezier(.3, .7, .4, 1);
     font-weight: bold;
@@ -21974,15 +21974,12 @@ svg:not(:root).svg-inline--fa {
     .navbar-collapse {
         order: 1;
     }
-    /* في النص */
-    .booking-btn {
-        order: 2;
-    }
+   
     /* يسار */
     .navbar-toggler-container {
         display: none;
     }
-    /* نختفي الزرار */
+  
 }
 
 /* الشاشات الصغيرة */
@@ -21995,11 +21992,7 @@ svg:not(:root).svg-inline--fa {
     .navbar-toggler-container {
         order: 2;
     }
-    /* المنيو على الشمال */
-    .booking-btn {
-        order: 1;
-        margin: 0 auto;
-    }
+ 
     /* في النص */
     .navbar-brand {
         order: 0;
@@ -22402,7 +22395,7 @@ svg:not(:root).svg-inline--fa {
 .card {
     background: #fff;
     border-radius: 15px;
-    padding: 30px 20px;
+    padding: 15px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     height: 100%;
 }
@@ -22430,3 +22423,35 @@ svg:not(:root).svg-inline--fa {
     line-height: 1.8;
 }
 
+#book-now {
+    position: fixed;
+    transform: rotate(90deg);
+    left: -48px;
+    width: 100px;
+    height: auto;
+    text-align: center;
+    padding: 2px;
+    padding-bottom: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 9999999;
+    background: rgb(36 204 99);
+    color: #FFFFFF !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-top: 30px;
+}
+
+    #book-now:hover {
+        background: rgba(40,40,40,1);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 6px 6px rgba(0,0,0,0.5);
+    }
+
+    #book-now a {
+        color: #FFFFFF;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+.booking-btn {
+    display: flex;
+    justify-content: space-around;
+}
