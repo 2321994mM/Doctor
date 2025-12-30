@@ -22426,7 +22426,7 @@ svg:not(:root).svg-inline--fa {
 #book-now {
     position: fixed;
     transform: rotate(90deg);
-    left: -48px;
+    left: -45px;
     width: 100px;
     height: auto;
     text-align: center;
