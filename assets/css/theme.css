@@ -22333,9 +22333,9 @@ svg:not(:root).svg-inline--fa {
     .ImageSlider {
         aspect-ratio: 4 / 3; /* نسبة أحسن للموبايل */
     }
-    .navbar {
+   /*.navbar {
         padding-top: 3rem !important;
-    }
+    }*/
 }
 .navigation {
     display: flex;
