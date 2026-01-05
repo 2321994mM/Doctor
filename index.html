@@ -586,20 +586,24 @@
                         <div class="app">
 
                             <div class="ImageSlider">
-                                <div class="n"><img class="width-inherit" src="assets/img/gallery/rev1.jpeg" /></div>
-                                <div class="n"><img class="width-inherit" src="assets/img/gallery/rev2.jpeg" /></div>
-                                <div class="n"><img class="width-inherit" src="assets/img/gallery/rev4.jpeg" /></div>
-                                <div class="n"><img class="width-inherit" src="assets/img/gallery/rev5.jpeg" /></div>
-                                <div class="n"><img class="width-inherit" src="assets/img/gallery/rev6.jpeg" /></div>
-                                <div class="n"><img class="width-inherit" src="assets/img/gallery/rev7.jpeg" /></div>
-                                <div class="n"><img class="width-inherit" src="assets/img/gallery/rev8.jpeg" /></div>
-                                <div class="n"><img class="width-inherit" src="assets/img/gallery/rev9.jpeg" /></div>
+                                <div class="n"onclick="openModal('assets/img/gallery/rev1.jpeg')"><img class="width-inherit" src="assets/img/gallery/rev1.jpeg" /></div>
+                                <div class="n"onclick="openModal('assets/img/gallery/rev2.jpeg')"><img class="width-inherit" src="assets/img/gallery/rev2.jpeg" /></div>
+                                <div class="n"onclick="openModal('assets/img/gallery/rev4.jpeg')"><img class="width-inherit" src="assets/img/gallery/rev4.jpeg" /></div>
+                                <div class="n"onclick="openModal('assets/img/gallery/rev5.jpeg')"><img class="width-inherit" src="assets/img/gallery/rev5.jpeg" /></div>
+                                <div class="n"onclick="openModal('assets/img/gallery/rev6.jpeg')"><img class="width-inherit" src="assets/img/gallery/rev6.jpeg" /></div>
+                                <div class="n"onclick="openModal('assets/img/gallery/rev7.jpeg')"><img class="width-inherit" src="assets/img/gallery/rev7.jpeg" /></div>
+                                <div class="n"onclick="openModal('assets/img/gallery/rev8.jpeg')"><img class="width-inherit" src="assets/img/gallery/rev8.jpeg" /></div>
+                                <div class="n"onclick="openModal('assets/img/gallery/rev9.jpeg')"><img class="width-inherit" src="assets/img/gallery/rev9.jpeg" /></div>
 
                             </div>
                             <div class="navigation">
                                 <button id="left"><i class="fas fa-angle-double-right"></i></button>
                                 <span hidden id="imageNumber"></span>
                                 <button id="right"><i class="fas fa-angle-double-left"></i></button>
+                            </div>
+
+                            <div id="modal" class="modal" onclick="closeModal()">
+                                <img id="modalImg">
                             </div>
                         </div>
                     </div>
@@ -938,7 +942,6 @@
                 );
             });
         });
-
         window.onload = function () {
             const images = document.querySelectorAll(".n");
             const rightBtn = document.querySelector("#right");
@@ -946,54 +949,42 @@
             const imageNumber = document.querySelector("#imageNumber");
 
             let index = 0;
-            let autoSlide;
 
             function updateSlider() {
                 images.forEach((img, i) => {
                     img.style.left = `${(i - index) * 100}%`;
                 });
                 imageNumber.textContent = `${index + 1} / ${images.length}`;
+
+                // تعطيل الأزرار عند الوصول للنهاية أو البداية
+                rightBtn.disabled = (index === images.length - 1);
+                leftBtn.disabled = (index === 0);
             }
 
             function nextSlide() {
                 if (index < images.length - 1) {
                     index++;
-                } else {
-                    index = 0; // يرجع لأول صورة
+                    updateSlider();
                 }
-                updateSlider();
+                // إذا كانت آخر صورة → لا يحدث شيء
             }
 
-          function startAutoSlide() {
-              autoSlide = setInterval(nextSlide, 4000); // كل 4 ثواني
-          }
-
-            function resetAutoSlide() {
-                clearInterval(autoSlide);
-                startAutoSlide();
+            function prevSlide() {
+                if (index > 0) {
+                    index--;
+                    updateSlider();
+                }
+                // إذا كانت أول صورة → لا يحدث شيء
             }
 
             // تشغيل أولي
             updateSlider();
-            startAutoSlide();
 
             // أزرار
-            rightBtn.addEventListener("click", () => {
-                nextSlide();
-                resetAutoSlide();
-            });
-
-            leftBtn.addEventListener("click", () => {
-                if (index > 0) {
-                    index--;
-                } else {
-                    index = images.length - 1;
-                }
-                updateSlider();
-                resetAutoSlide();
-            });
+            rightBtn.addEventListener("click", nextSlide);
+            leftBtn.addEventListener("click", prevSlide);
         };
-      
+
         function openModal(src) {
             document.getElementById("modal").style.display = "flex";
             document.getElementById("modalImg").src = src;
