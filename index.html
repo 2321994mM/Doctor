@@ -668,10 +668,10 @@
 
 
                             <div id="modal" class="modal">
-                                <span class="close" onclick="closeModal()">&times;</span>
-                                <button class="prev" onclick="prevModalImage()">&#10094;</button>
+                                <span class="close" onclick="closeModal1()">&times;</span>
+                                <button class="prev" onclick="prevModalImage1()">&#10094;</button>
                                 <img id="modalImg">
-                                <button class="next" onclick="nextModalImage()">&#10095;</button>
+                                <button class="next" onclick="nextModalImage1()">&#10095;</button>
                             </div>
 
 
@@ -855,10 +855,10 @@
               
 
                 <div id="modal2" class="modal">
-                    <span class="close" onclick="closeModal()">&times;</span>
-                    <button class="prev" onclick="prevModalImage()">&#10094;</button>
+                    <span class="close" onclick="closeModal2()">&times;</span>
+                    <button class="prev" onclick="prevModalImage2()">&#10094;</button>
                     <img id="modalImg2">
-                    <button class="next" onclick="nextModalImage()">&#10095;</button>
+                    <button class="next" onclick="nextModalImage2()">&#10095;</button>
                 </div>
             </div>
         </section>
@@ -1061,91 +1061,82 @@
             leftBtn.addEventListener("click", prevSlide);
         };
 
-        let currentIndex = 0;
-        let images; // هنعرفها ديناميكي من HTML
+        let currentIndex1 = 0;
+        let images1 = [];
 
-        window.onload = function () {
-            // نجيب كل الصور من HTML
-            images = Array.from(document.querySelectorAll(".ImageSlider .n img"));
+        document.addEventListener("DOMContentLoaded", () => {
+            images1 = Array.from(document.querySelectorAll(".ImageSlider .n img"));
 
-            // نضيف event لكل صورة
-            images.forEach((img, i) => {
+            images1.forEach((img, i) => {
                 img.addEventListener("click", () => {
-                    currentIndex = i;
-                    openModal();
+                    currentIndex1 = i;
+                    openModal1();
                 });
             });
-        };
+        });
 
-        function openModal() {
+        function openModal1() {
             document.getElementById("modal").style.display = "flex";
-            document.getElementById("modalImg").src = images[currentIndex].src;
+            document.getElementById("modalImg").src = images1[currentIndex1].src;
         }
 
-        function closeModal() {
+        function closeModal1() {
             document.getElementById("modal").style.display = "none";
         }
 
-        function nextModalImage() {
-            if (currentIndex < images.length - 1) {
-                currentIndex++;
-                document.getElementById("modalImg").src = images[currentIndex].src;
+        function nextModalImage1() {
+            if (currentIndex1 < images1.length - 1) {
+                currentIndex1++;
+                document.getElementById("modalImg").src = images1[currentIndex1].src;
             }
         }
 
-        function prevModalImage() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                document.getElementById("modalImg").src = images[currentIndex].src;
+        function prevModalImage1() {
+            if (currentIndex1 > 0) {
+                currentIndex1--;
+                document.getElementById("modalImg").src = images1[currentIndex1].src;
             }
         }
-
-
-
-
 
 
 
 
         let currentIndex2 = 0;
-        let images2; // هنعرفها ديناميكي من HTML
+        let images2 = [];
 
-        window.onload = function () {
-            // نجيب كل الصور من HTML
+        document.addEventListener("DOMContentLoaded", () => {
             images2 = Array.from(document.querySelectorAll(".card2 img"));
 
-            // نضيف event لكل صورة
             images2.forEach((img, i) => {
                 img.addEventListener("click", () => {
                     currentIndex2 = i;
-                    openModal();
+                    openModal2();
                 });
             });
-        };
+        });
 
-        function openModal() {
+        function openModal2() {
             document.getElementById("modal2").style.display = "flex";
             document.getElementById("modalImg2").src = images2[currentIndex2].src;
         }
 
-        function closeModal() {
+        function closeModal2() {
             document.getElementById("modal2").style.display = "none";
         }
 
-        function nextModalImage() {
+        function nextModalImage2() {
             if (currentIndex2 < images2.length - 1) {
                 currentIndex2++;
                 document.getElementById("modalImg2").src = images2[currentIndex2].src;
             }
         }
 
-        function prevModalImage() {
+        function prevModalImage2() {
             if (currentIndex2 > 0) {
                 currentIndex2--;
                 document.getElementById("modalImg2").src = images2[currentIndex2].src;
             }
         }
-
 
 
 
