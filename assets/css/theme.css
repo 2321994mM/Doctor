@@ -22459,8 +22459,7 @@ svg:not(:root).svg-inline--fa {
     align-items: center;
     justify-content: center;
     padding: 30px;
-    align-items: flex-start;
-}
+  }
 
     .modal img {
         max-width: 100%;
@@ -22486,4 +22485,23 @@ svg:not(:root).svg-inline--fa {
     max-width: 400px;
     aspect-ratio: 20 / 16;
     border: 5px groove #1b71a1;
+}
+.prev, .next {
+    position: fixed;
+    top: 50%;
+    font-size: 50px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10000;
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
 }
