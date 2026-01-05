@@ -22473,7 +22473,7 @@ svg:not(:root).svg-inline--fa {
     position: fixed;
     top: 15px;
     right: 20px;
-    font-size: 30px;
+    font-size: 50px;
     z-index: 10000;
 }
 .card2 {
@@ -22490,7 +22490,7 @@ svg:not(:root).svg-inline--fa {
     position: fixed;
     top: 50%;
     font-size: 50px;
-    color: white;
+    color: #1b71a1;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -22499,9 +22499,9 @@ svg:not(:root).svg-inline--fa {
 }
 
 .prev {
-    left: 20px;
+    left: 1%;
 }
 
 .next {
-    right: 20px;
+    right: 1%;
 }
