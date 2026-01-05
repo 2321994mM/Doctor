@@ -22483,7 +22483,7 @@ svg:not(:root).svg-inline--fa {
     padding: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     height: 100%;
-    aspect-ratio: 16 / 9;
     max-width: 400px;
     aspect-ratio: 20 / 16;
+    border: 5px groove #1b71a1;
 }
