@@ -117,7 +117,7 @@
                             معًا نعمل على<br><strong>تحسين </strong>صحتك
                             النفسية&nbsp;<strong>وبناء حياة</strong>أكثر هدوءًا واتزانًا.
                         </h1>
-                        <p class="fs-1 mb-5">جلسات نفسية مريحة وآمنة، متاحة أونلاين أو بالحضور حسب اللي يناسبك.</p>
+                        <p class="fs-1 mb-5">جلسات نفسية مريحة وآمنة، متاحة أونلاين أو بالحضور الشخصي، وفق ما يناسبك.</p>
                     </div>
                 </div>
             </div>
@@ -491,9 +491,7 @@
                                                     دعم المتفوقين والموهوبين
                                                 </h2>
                                                 <div class="emotions-slider-item__text">
-                                                    تمنحك بيئة آمنة وموجهة، حيث يعمل مختصون نفسيون على تنمية مهاراتك، تعزيز ثقتك بنفسك، وتطوير استراتيجيات فعّالة للتفوق الأكاديمي والاجتماعي.
-                                                    انضم الآن وابدأ رحلة التفوق بطريقة متوازنة ومُلهمة.
-                                                </div>
+                                              دعم نفسي متخصّص للمتفوقين والموهوبين، يركّز على تنمية القدرات، وتعزيز الثقة بالنفس، ومساعدة الأفراد على التعامل مع الضغوط النفسية المصاحبة للتميّز، وبناء استراتيجيات متوازنة لتحقيق التفوق الأكاديمي والاجتماعي.  </div>
 
                                                 <div class="emotions-slider-item__footer">
                                                     <a class="emotions-slider-item__btn" href="/" onclick="event.preventDefault();">
@@ -714,19 +712,31 @@
 
 
                     <div class="col-md-1"></div>
-                    <div class="gallery col-md-10">
-                        <div>
-                            <iframe src="//www.youtube.com/embed/1TYl3jhfEDA?rel=0" allowfullscreen frameborder="0" name="tab"></iframe>
-                        </div>
-                        <div>
-                            <span>
-                                <a href="https://www.youtube.com/embed/1TYl3jhfEDA?rel=0&autoplay=1" target="tab"><img src="https://img.youtube.com/vi/1TYl3jhfEDA/default.jpg"></a>
-                                <a href="https://www.youtube.com/embed/xFa2_PVMeDQ?rel=0&autoplay=1" target="tab"><img src="https://img.youtube.com/vi/xFa2_PVMeDQ/default.jpg"></a>
-                                <a href="https://www.youtube.com/embed/hSrOpTYKNMw?rel=0&autoplay=1" target="tab"><img src="https://img.youtube.com/vi/hSrOpTYKNMw/default.jpg"></a>
-                                <a href="https://www.youtube.com/embed/WFhzzJjRncI?rel=0&autoplay=1" target="tab"><img src="https://img.youtube.com/vi/WFhzzJjRncI/default.jpg"></a>
-                            </span>
-                        </div>
-                    </div>
+                   
+
+
+<div class="gallery col-md-10">
+  <div>
+    <video id="mainVideo" controls muted>
+      <source src="assets/video/vio1.mp4" type="video/mp4">
+      المتصفح لا يدعم تشغيل الفيديو
+    </video>
+  </div>
+
+  <div>
+    <span>
+   
+
+      <a href="#" onclick="changeVideo(event, 'assets/video/vio2.mp4')">
+        <img src="assets/video/vio2.png" alt="video 2 thumbnail">
+      </a>
+
+      <a href="#" onclick="changeVideo(event, 'assets/video/vio3.mp4')">
+        <img src="assets/video/vio3.png" alt="video 3 thumbnail">
+      </a>
+    </span>
+  </div>
+</div>
 
 
                     <div class="col-md-1"></div>
@@ -1141,9 +1151,17 @@
         }
 
 
-
-
-
+function changeVideo(event, src) {
+  event.preventDefault();
+  console.log("Changing video to: " + src);
+  const video = document.getElementById("mainVideo");
+  const source = video.querySelector("source");
+  source.src = src;
+  video.load();
+  video.play().catch(() => {
+    console.log("اضغط لتشغيل الفيديو");
+  });
+}
     </script>
 
     <!-- ===============================================-->

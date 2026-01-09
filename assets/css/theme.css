@@ -22197,7 +22197,7 @@ svg:not(:root).svg-inline--fa {
             padding-top: 56.25%;
         }
 
-    .gallery iframe,
+    .gallery video,
     .gallery span {
         position: absolute;
         top: 0;
@@ -22220,13 +22220,13 @@ svg:not(:root).svg-inline--fa {
             margin-bottom: 5px;
         }
 
-    .gallery iframe,
+    .gallery video,
     .gallery img {
         max-width: 100%;
         vertical-align: middle;
     }
 
-    .gallery iframe {
+    .gallery video {
         width: 100%;
         height: 100%;
         border: none;
