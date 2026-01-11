@@ -716,27 +716,31 @@
 
 
 <div class="gallery col-md-10">
-  <div>
+
+  <!-- الفيديو الكبير -->
+  <div class="main-video">
     <video id="mainVideo" controls muted>
       <source src="assets/video/vio1.mp4" type="video/mp4">
       المتصفح لا يدعم تشغيل الفيديو
     </video>
   </div>
 
-  <div>
-    <span>
+  <!-- thumbnails -->
+  <div class="thumbs">
+    <a href="#" onclick="changeVideo(event, 'assets/video/vio2.mp4')">
+      <img src="assets/video/vio2.png" alt="video 2">
+    </a>
 
-      <a href="#" onclick="changeVideo(event, 'assets/video/vio2.mp4')">
-        <img src="assets/video/vio2.png" alt="video 2 thumbnail">
-      </a>
+    <a href="#" onclick="changeVideo(event, 'assets/video/vio3.mp4')">
+      <img src="assets/video/vio3.png" alt="video 3">
+    </a>
 
-      <a href="#" onclick="changeVideo(event, 'assets/video/vio3.mp4')">
-        <img src="assets/video/vio3.png" alt="video 3 thumbnail">
-      </a>
-    </span>
+    <a href="#" onclick="changeVideo(event, 'assets/video/vio1.mp4')">
+      <img src="assets/video/vio1.png" alt="video 1">
+    </a>
   </div>
-</div>
 
+</div>
 
                     <div class="col-md-1"></div>
 
